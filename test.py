@@ -15,6 +15,7 @@ while True:
     if not ret:
         break
 
+    '''
     i = 0
     while(i < int(cap.get(3))):
         frame = cv2.line(frame, (i, 0), (i, int(cap.get(4))), (255, 0, 0), 5)
@@ -24,6 +25,7 @@ while True:
     while(j < int(cap.get(4))):
         frame = cv2.line(frame, (0, j), (int(cap.get(3)), j), (255, 0, 0), 5)
         j += 50
+    '''
 
     # detect the hand
     hand = handy.detect_hand(frame, hist)
@@ -72,7 +74,8 @@ while True:
                 print("F")
             elif (x <= 200 and x >= 50):
                 print("E")
-        
+            elif (x >= 850 and x <= 1000):
+                print("C")
 
     # to get the centre of mass of the hand
     com = hand.get_center_of_mass()
